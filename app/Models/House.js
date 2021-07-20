@@ -11,8 +11,8 @@ export default class House {
 
   get Template() {
     return `
-    <div class="col-md-3 col-sm-2 my-3">
-      <div class="car bg-dark p-2 text-light shadow">
+    <div class="card">
+      <div class="card-body bg-dark text-light">
           <img src="${this.imgUrl}" class="w-100" alt="house image">
           <div class="p-3">
               <div class="text-center">
@@ -20,7 +20,7 @@ export default class House {
               </div>
               <p>Built in ${this.year}</p>
               <p><em>$${this.price}</em></p>
-              <button class="btn btn-info btn-block shadow-sm" onclick="app.housesController.bidHouse('${this.id}')"> bid </button>
+              <button class="btn btn-primary btn-block shadow-sm" onclick="app.housesController.bidHouse('${this.id}')"> bid </button>
               <button class="btn btn-warning btn-block shadow-sm" onclick="app.housesController.deleteHouse('${this.id}')"> delete </button>
           </div>
       </div>

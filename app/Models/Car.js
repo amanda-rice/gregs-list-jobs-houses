@@ -22,8 +22,8 @@ export default class Car {
 
   get Template() {
     return `
-    <div class="col-md-3 col-sm-2 my-3">
-      <div class="car bg-light shadow p-2">
+    <div class="card">
+      <div class="card-body">
           <img src="${this.imgUrl}" class="w-100" alt="${this.make} ${this.model} car image">
           <div class="p-3 text-dark">
               <div class="text-center">
@@ -31,7 +31,7 @@ export default class Car {
               </div>
               <p>${this.description}</p>
               <p><em>$${this.price}</em></p>
-              <button class="btn btn-info btn-block shadow-sm" onclick="app.carsController.bidCar('${this.id}')"> bid </button>
+              <button class="btn btn-primary btn-block shadow-sm" onclick="app.carsController.bidCar('${this.id}')"> bid </button>
               <button class="btn btn-warning btn-block shadow-sm" onclick="app.carsController.deleteCar('${this.id}')"> delete </button>
           </div>
       </div>
