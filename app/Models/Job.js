@@ -1,10 +1,11 @@
 export default class Job {
-  constructor({ salary, title, duties, education, company }) {
-    this.salary = salary
-    this.title = title
-    this.duties = duties
-    this.education = education
+  constructor({ rate, jobTitle, hours, description, company, id }) {
+    this.rate = rate
+    this.jobTitle = jobTitle
+    this.hours = hours
+    this.description = description
     this.company = company
+    this.id = id
   }
 
   get Template() {
@@ -13,13 +14,14 @@ export default class Job {
       <div class="car bg-light shadow">
           <div class="p-3">
               <div class="text-center">
-                  <p><b>${this.title}</b></p>
+                  <p><b>${this.jobTitle}</b></p>
               </div>
               <p>Job Duties:</p>
-              <p>${this.duties}</p>
-              <p>Preferred Education: ${this.education}</p>
+              <p>${this.hours}</p>
+              <p>Preferred Education: ${this.description}</p>
               <p>${this.company}</p>
-              <p><em>$${this.salary}/year</em></p>
+              <p><em>$${this.rate}/year</em></p>
+              <button class="btn btn-warning btn-block shadow-sm" onclick="app.jobsController.deleteJob('${this.id}')"> delete </button>
           </div>
       </div>
     </div>
